@@ -1,6 +1,6 @@
 export default function Gallery() {
     return (<>
-        <div class="m-2 h-100 vw-100">
+        <div class="m-2 vh-100 vw-100">
             <img src="https://images.unsplash.com/photo-1550344071-13ecada2a91d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
                 className="vw-100 vh-100 position-fixed top-0 start-0"
@@ -57,11 +57,11 @@ export default function Gallery() {
                                             src="https://i.pinimg.com/1200x/34/e1/c0/34e1c031783f99811b45db8ce3d8bcb9.jpg"
                                             alt="" />
                                     </div></div>
-                                <button class="carousel-control-prev bg-dark " data-bs-slide="prev" data-bs-target="#photoCarousel1"
+                                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#photoCarousel1"
                                     aria-controls="carousel">
                                     <span class="carousel-control-prev-icon rounded-2"></span>
                                 </button>
-                                <button class="carousel-control-next bg-dark " data-bs-slide="next" data-bs-target="#photoCarousel1" aria-controls="carousel">
+                                <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#photoCarousel1" aria-controls="carousel">
                                     <span class="carousel-control-next-icon"></span>
                                 </button>
                             </div>
@@ -125,8 +125,8 @@ export default function Gallery() {
                                 </div>
 
                             </div>
-                            <button className="carousel-control-prev bg-dark " data-bs-slide="prev" aria-controls="carousel" data-bs-target="#photoCarousel2"><span className="carousel-control-prev-icon"></span></button>
-                            <button className="carousel-control-next bg-dark " data-bs-slide="next" aria-controls="carousel" data-bs-target="#photoCarousel2"><span className="carousel-control-next-icon"></span></button>
+                            <button className="carousel-control-prev" data-bs-slide="prev" aria-controls="carousel" data-bs-target="#photoCarousel2"><span className="carousel-control-prev-icon"></span></button>
+                            <button className="carousel-control-next" data-bs-slide="next" aria-controls="carousel" data-bs-target="#photoCarousel2"><span className="carousel-control-next-icon"></span></button>
                         </div>
                     </div>
                 </div>
@@ -183,10 +183,10 @@ export default function Gallery() {
                                             alt="" /></div>
                                 </div>
 
-                                <button class="carousel-control-prev bg-dark " data-bs-slide="prev" data-bs-target="#photoCarousel3" aria-controls="photoCarousel3">
+                                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#photoCarousel3" aria-controls="photoCarousel3">
                                     <span class="carousel-control-prev-icon"></span>
                                 </button>
-                                <button class="carousel-control-next bg-dark " data-bs-slide="next" data-bs-target="#photoCarousel3" aria-controls="photoCarousel3">
+                                <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#photoCarousel3" aria-controls="photoCarousel3">
                                     <span class="carousel-control-next-icon"></span>
                                 </button>
 
@@ -232,10 +232,10 @@ export default function Gallery() {
                                     </div></div>
 
                             </div>
-                            <button class="carousel-control-prev bg-dark " data-bs-slide="prev" data-bs-target="#photoCarousel4" aria-controls="photoCarousel4">
+                            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#photoCarousel4" aria-controls="photoCarousel4">
                                 <span class="carousel-control-prev-icon"></span>
                             </button>
-                            <button class="carousel-control-next bg-dark " data-bs-slide="next" data-bs-target="#photoCarousel4" aria-controls="photoCarousel4">
+                            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#photoCarousel4" aria-controls="photoCarousel4">
                                 <span class="carousel-control-next-icon"></span>
                             </button>
                         </div>

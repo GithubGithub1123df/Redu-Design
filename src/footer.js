@@ -1,25 +1,45 @@
+import { useState, useEffect } from "react"
+
 export default function Footer() {
+    const [time, setTime] = useState(new Date());
+
+    useEffect(() => {
+        let timerId;
+
+        const updateClock = () => {
+
+            setTime(new Date());
+            timerId = setTimeout(updateClock, 1000);
+        };
+
+        updateClock();
+
+        return () => clearTimeout(timerId);
+    }, []);
+
+
     return (<>
-        <div className="w-100 position-static bg-light bottom-0 d-flex justify-content-between p-5 overflow-hidden"
-            style={{ zIndex: "1", height: "10vh" }}>
+        <div className="w-100 position-static bottom-0 d-flex justify-content-center align-items-center p-3 shadow-md overflow-hidden"
+            style={{ zIndex: "1", height: "20vh" }}>
+            <div className="w-75 bg-light p-3" style={{ borderRadius: "21px" }}>
 
-            <div className="w-100 d-flex justify-content-center align-items-center flex-wrap">
-                <div className="text-center m-2">
-
-
-
-                    <h6 style={{
-                        fontSize: "4vh",
-                        fontFamily: "Pacifico",
-                        marginTop: "20px",
-                        color: "#44006eff",
-                        zIndex: "2"
-                    }}>Wear your Imagination.</h6>
+                <div class="name" style={{ color: "gold", fontSize: "1.2vw" }}><h4>Redu Design</h4></div>
+                <div class="socialmedia">
+                    <a href="" style={{ color: "#44006eff" }}><i class="bi bi-facebook m-2"></i></a>
+                    <a href="" style={{ color: "#44006eff" }}><i class="bi bi-twitter-x m-2"></i></a>
+                    <a href="" style={{ color: "#44006eff" }}><i class="bi bi-tiktok m-2"></i></a>
+                    <a href="" style={{ color: "#44006eff" }}><i class="bi bi-instagram m-2"></i></a>
+                    <a href="" style={{ color: "#44006eff" }}><i class="bi bi-telegram m-2"></i></a>
                 </div>
+                <div class="credentials">
 
+                    <div class="date">
+                        <p>&copy; {time.getFullYear()} Redu Design. All Rights Reserved &reg;</p>
+
+                    </div>
+                </div>
             </div>
 
-
-        </div>
+        </div >
     </>)
 }
