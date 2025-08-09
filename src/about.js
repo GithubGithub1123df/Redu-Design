@@ -8,6 +8,21 @@ export default function About() {
             .then((data) => setText(data));
     }, []);
 
+    const [team, setTeam] = useState("")
+
+    useEffect(() => {
+        fetch("/team.txt").then((res) => res.text()).then((data) => setTeam(data))
+    })
+    const [philiosophy, setPhilisophy] = useState("")
+
+    useEffect(() => {
+        fetch("/philiosophy.txt").then((res) => res.text()).then((data) => setPhilisophy(data))
+    })
+    const [join, setJoin] = useState("")
+
+    useEffect(() => {
+        fetch("/join.txt").then((res) => res.text()).then((data) => setJoin(data))
+    })
 
     return (
         <>
@@ -25,6 +40,40 @@ export default function About() {
                 }}>About Us</h1>
                 <div class="w-50 h-75 bg-light p-3" style={{ overflow: "hidden", overflowY: "scroll", borderRadius: "19px" }}>
                     <p style={{ fontSize: "2vw", fontFamily: "pt serif", textAlign: "center" }}>{text}</p>
+                    <h1 className="text-center" style={{
+                        color: "gold",
+                        textShadow: "1px 1px 3px black",
+                        fontFamily: "Berkshire Swash",
+                        fontSize: "3vw"
+
+                    }}>Our Philiosophy</h1>
+
+                    <p style={{ fontSize: "2vw", fontFamily: "pt serif", textAlign: "center" }}>{philiosophy}</p>
+                    <h1 className="text-center" style={{
+                        color: "gold",
+                        textShadow: "1px 1px 3px black",
+                        fontFamily: "Berkshire Swash",
+                        fontSize: "3vw"
+
+                    }}>Our Team</h1>
+
+                    <p style={{ fontSize: "2vw", fontFamily: "pt serif", textAlign: "center" }}>{team}</p>
+                    <h1 className="text-center" style={{
+                        color: "gold",
+                        textShadow: "1px 1px 3px black",
+                        fontFamily: "Berkshire Swash",
+                        fontSize: "3vw"
+
+                    }}>Join Our Journey</h1>
+
+                    <p style={{ fontSize: "2vw", fontFamily: "pt serif", textAlign: "center" }}>{join}</p>
+                    <div class="socialmedia d-flex align-items-center justify-content-center">
+                        <a href="" style={{ color: "#44006eff" }}><i class="bi bi-facebook m-2"></i></a>
+                        <a href="" style={{ color: "#44006eff" }}><i class="bi bi-twitter-x m-2"></i></a>
+                        <a href="" style={{ color: "#44006eff" }}><i class="bi bi-tiktok m-2"></i></a>
+                        <a href="" style={{ color: "#44006eff" }}><i class="bi bi-instagram m-2"></i></a>
+                        <a href="" style={{ color: "#44006eff" }}><i class="bi bi-telegram m-2"></i></a>
+                    </div>
                 </div>
             </div>
         </>

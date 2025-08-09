@@ -17,11 +17,11 @@ export default function Footer() {
         return () => clearTimeout(timerId);
     }, []);
 
-
+    const commitHash = process.env.REACT_APP_GIT_HASH || '1.0.0.1';
     return (<>
         <div className="w-100 position-static bottom-0 d-flex justify-content-center align-items-center p-3 shadow-md overflow-hidden"
             style={{ zIndex: "1", height: "20vh" }}>
-            <div className="w-75 bg-light p-3" style={{ borderRadius: "21px" }}>
+            <div className="w-100 bg-light p-3" style={{ borderRadius: "21px" }}>
 
                 <div class="name" style={{ color: "gold", fontSize: "1.2vw" }}><h4>Redu Design</h4></div>
                 <div class="socialmedia">
@@ -35,7 +35,7 @@ export default function Footer() {
 
                     <div class="date">
                         <p>&copy; {time.getFullYear()} Redu Design. All Rights Reserved &reg;</p>
-
+                        Version: {commitHash}
                     </div>
                 </div>
             </div>
