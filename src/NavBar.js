@@ -7,7 +7,7 @@ function NavBar() {
                         <span className="navbar-toggler-icon" style={{
                             filter: "invert(80%) sepia(30%) saturate(500%) hue-rotate(20deg)",
                             transform: "scale(1.2)",
-                            fontSize: "1.6vw"
+                            fontSize: "1.8vh",
                         }}></span>
                     </a>
 
@@ -20,9 +20,9 @@ function NavBar() {
                             flexDirection: "column",
                             padding: "12px"
                         }}>
-                            <li className="dropdown-item" style={{ fontSize: "2vw", fontFamily: "Prata" }}><a href="/home" className="text-dark text-decoration-none">Home</a></li>
-                            <li className="dropdown-item" style={{ fontSize: "2vw", fontFamily: "Prata" }}><a href="/about" className="text-dark text-decoration-none">About</a></li>
-                            <li className="dropdown-item" style={{ fontSize: "2vw", fontFamily: "Prata" }}><a href="/gallery" className="text-dark text-decoration-none">Gallery</a></li>
+                            <li className="dropdown-item" style={{ fontSize: "3vw", fontFamily: "Prata" }}><a href="/home" className="text-dark text-decoration-none">Home</a></li>
+                            <li className="dropdown-item" style={{ fontSize: "3vw", fontFamily: "Prata" }}><a href="/about" className="text-dark text-decoration-none">About</a></li>
+                            <li className="dropdown-item" style={{ fontSize: "3vw", fontFamily: "Prata" }}><a href="/gallery" className="text-dark text-decoration-none">Gallery</a></li>
 
                         </ul>
                     </div>

@@ -38,7 +38,7 @@ export default function About() {
                     fontSize: "7vw"
 
                 }}>About Us</h1>
-                <div class="w-50 h-75 bg-light p-3" style={{ overflow: "hidden", overflowY: "scroll", borderRadius: "19px" }}>
+                <div class="w-75 h-75 bg-light p-3" style={{ overflow: "hidden", overflowY: "scroll", borderRadius: "19px" }}>
                     <p style={{ fontSize: "2vw", fontFamily: "pt serif", textAlign: "center" }}>{text}</p>
                     <h1 className="text-center" style={{
                         color: "gold",
