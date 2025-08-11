@@ -26,6 +26,32 @@ export default function Home() {
 
         return () => clearTimeout(timeout);
     }, [subText, isDeleting, textIndex]);
+
+    // contact nus page
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [status, setStatus] = useState("");
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus("Sending...");
+
+        const res = await fetch("/api/sendEmail", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
+
+        if (res.ok) {
+            setStatus("Message sent!");
+            setFormData({ name: "", email: "", message: "" });
+        } else {
+            setStatus("Failed to send message.");
+        }
+    };
     return (<>
         <div className="">
             <div className="vh-100 w-100 position-sticky bg-light top-0 d-flex justify-content-between p-5 overflow-hidden"
@@ -131,7 +157,7 @@ export default function Home() {
                 <img className="position-absolute vw-100 vh-100" style={{ zIndex: "-3", opacity: "0.6" }} src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="bg" />
                 <h1 className="text-light" style={{ textShadow: "2px 2px 8px #000" }}>Contact Us</h1>
                 <form className="bg-white d-flex align-items-center justify-content-center flex-column p-4 rounded-3 vw-50 vh-50">
-                    <label>Name</label>
+                    {/* <label>Name</label>
                     <input className="form-control" type="email" placeholder="Full Name" />
                     <label>Email</label>
                     <input className="form-control" type="email" placeholder="Email" />
@@ -140,8 +166,13 @@ export default function Home() {
                     <label>Message</label>
                     <textarea className="form-control" />
 
-                    <button className="btn btn-success mt-3">Submit</button>
+                    <button className="btn btn-success mt-3">Submit</button> */}
+                    <input name="name" value={formData.name} onChange={handleChange} placeholder="Your name" required />
+                    <input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Your email" required />
+                    <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your message" required />
+                    <button type="submit">Send</button>
                 </form>
+                <p>{status}</p>
             </div>
         </div>
     </>)
